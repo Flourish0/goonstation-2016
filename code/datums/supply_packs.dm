@@ -466,6 +466,18 @@
 	cost = 15000
 	containertype = /obj/storage/crate
 	containername = "Novelty Clothing Crate"
+	
+/datum/supply_packs/monkeyclothes
+	name = "Monkey Clothing Crate"
+	desc = "x5 Assorted Monkey Clothing"
+	contains = list(/obj/item/clothing/suit/monkey/jacket,
+					/obj/item/clothing/suit/monkey/windbreaker,
+					/obj/item/clothing/under/monkey/darkgray,
+					/obj/item/clothing/under/monkey/shorts,
+					/obj/item/clothing/under/monkey/lightgray)
+	cost = 3500
+	containertype = /obj/storage/crate
+	containername = "Monkey Clothing Crate"
 
 #ifdef HALLOWEEN
 /datum/supply_packs/halloween
