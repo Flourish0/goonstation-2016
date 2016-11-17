@@ -9,7 +9,7 @@
 */
 
 // this shit is lazy.  I'm lazy.  lazyyyy
-/obj/item/clothing/under/monkey
+/obj/item/clothing/under/monkey/npc/
 	name = "monkey jumpsuit"
 	desc = "A jumpsuit, for monkeys!"
 	icon = 'icons/mob/monkey.dmi'
@@ -97,3 +97,49 @@
 	dropped(mob/user as mob)
 		..()
 		qdel(src)
+
+// cute (i hope) monkey clothes incoming! i'm keeping the inhand_image_icon parts bc i might make the rest of them sometime in the future
+
+/obj/item/clothing/suit/monkey/
+	icon = 'icons/obj/clothing/monkey/item_monkey.dmi'
+	wear_image_icon = 'icons/mob/monkey/worn_monkey.dmi'
+	inhand_image_icon = 'icons/mob/monkey/hand_monkey.dmi'
+	compatible_species = list("monkey")
+	monkey_clothes = 1
+
+	jacket
+		name = "monkey jacket"
+		desc = "A sleek and stylish jacket, just for monkeys!"
+		icon_state = "jacket"
+		item_state = "jacket"
+
+	windbreaker
+		name = "monkey windbreaker"
+		desc = "What wind does a monkey need to break when they're in space?!"
+		icon_state = "windbreaker"
+		item_state = "windbreaker"
+
+/obj/item/clothing/under/monkey/
+	icon = 'icons/obj/clothing/monkey/item_monkey.dmi'
+	wear_image_icon = 'icons/mob/monkey/worn_monkey.dmi'
+	inhand_image_icon = 'icons/mob/monkey/hand_monkey.dmi'
+	compatible_species = list("monkey")
+	monkey_clothes = 1
+
+	darkgray
+		name = "dark gray monkey jumpsuit"
+		desc = "A sleek and stylish jumpsuit, just for monkeys!"
+		icon_state = "darkgray"
+		item_state = "darkgray"
+
+	lightgray
+		name = "light gray monkey jumpsuit"
+		desc = "A sleek and stylish jumpsuit, just for monkeys!"
+		icon_state = "lightgray"
+		item_state = "lightgray"
+
+	shorts
+		name = "monkey shorts"
+		desc = "Dress shorts with a shiny silver buckle - for monkey use only."
+		icon_state = "shorts"
+		item_state = "shorts"
