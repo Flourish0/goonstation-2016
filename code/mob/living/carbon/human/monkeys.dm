@@ -20,7 +20,7 @@
 	New()
 		..()
 		spawn(10)
-			src.equip_if_possible(new /obj/item/clothing/under/monkey/blue(src), slot_w_uniform)
+			src.equip_if_possible(new /obj/item/clothing/under/monkey/npc/blue(src), slot_w_uniform)
 
 /mob/living/carbon/human/npc/monkey/mrs_muggles
 	name = "Mrs. Muggles"
@@ -29,7 +29,7 @@
 	New()
 		..()
 		spawn(10)
-			src.equip_if_possible(new /obj/item/clothing/under/monkey/pink(src), slot_w_uniform)
+			src.equip_if_possible(new /obj/item/clothing/under/monkey/npc/pink(src), slot_w_uniform)
 
 /mob/living/carbon/human/npc/monkey/mr_rathen
 	name = "Mr. Rathen"
@@ -38,7 +38,7 @@
 	New()
 		..()
 		spawn(10)
-			src.equip_if_possible(new /obj/item/clothing/under/monkey/yellow(src), slot_w_uniform)
+			src.equip_if_possible(new /obj/item/clothing/under/monkey/npc/yellow(src), slot_w_uniform)
 
 /mob/living/carbon/human/npc/monkey/albert
 	name = "Albert"
@@ -83,7 +83,7 @@
 	New()
 		..()
 		spawn(10)
-			src.equip_if_possible(new /obj/item/clothing/under/monkey/green(src), slot_w_uniform)
+			src.equip_if_possible(new /obj/item/clothing/under/monkey/npc/green(src), slot_w_uniform)
 
 /mob/living/carbon/human/npc/monkey // :getin:
 	name = "monkey"
