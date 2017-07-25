@@ -571,37 +571,38 @@
 		switch(act)
 			if("scratch")
 				if (!mob.restrained())
-					. = "<B>The [mob.name]</B> scratches."
+					. = "<B>[mob.name]</B> scratches."
 			if("whimper")
 				if (!muzzled)
-					. = "<B>The [mob.name]</B> whimpers."
+					. = "<B>[mob.name]</B> whimpers."
 			if("yawn")
 				if (!muzzled)
-					. = "<b>The [mob.name]</B> yawns."
+					. = "<b>[mob.name]</B> yawns."
 			if("roar")
 				if (!muzzled)
-					. = "<B>The [mob.name]</B> roars."
+					. = "<B>[mob.name]</B> roars."
 			if("tail")
-				. = "<B>The [mob.name]</B> waves \his tail."
+				. = "<B>[mob.name]</B> waves \his tail."
 			if("paw")
 				if (!mob.restrained())
-					. = "<B>The [mob.name]</B> flails \his paw."
+					. = "<B>[mob.name]</B> flails \his paw."
 			if("scretch")
 				if (!muzzled)
-					. = "<B>The [mob.name]</B> scretches."
+					. = "<B>[mob.name]</B> scretches."
 			if("sulk")
-				. = "<B>The [mob.name]</B> sulks down sadly."
-			if("dance")
-				if (!mob.restrained())
-					. = "<B>The [mob.name]</B> dances around happily."
+				. = "<B>[mob.name]</B> sulks down sadly."
+			// if("dance")
+				// if (!mob.restrained())
+					// . = "<B>[mob.name]</B> dances around happily."
+						// was moved, but saving just in case
 			if("roll")
 				if (!mob.restrained())
-					. = "<B>The [src.name]</B> rolls."
+					. = "<B>[src.name]</B> rolls."
 			if("gnarl")
 				if (!muzzled)
 					. = "<B>[mob]</B> gnarls and shows \his teeth.."
 			if("jump")
-				. = "<B>The [mob.name]</B> jumps!"
+				. = "<B>[mob.name]</B> jumps!"
 			if ("scream")
 				if(mob.emote_allowed)
 					if(!(mob.client && mob.client.holder))
