@@ -349,6 +349,11 @@
 	else if (src.traitHolder && src.traitHolder.hasTrait("petasusaphilic"))
 		var/picked = pick(typesof(/obj/item/clothing/head) - list(/obj/item/clothing/head, /obj/item/clothing/head/power, /obj/item/clothing/head/fancy, /obj/item/clothing/head/monkey, /obj/item/clothing/head/monkey/paper_hat) ) //IM A MONSTER DONT LOOK AT ME. NOOOOOOOOOOO
 		trinket = new picked(src)
+	else if (src.traitHolder && src.traitHolder.hasTrait("beestfriend"))
+		if(prob(15))
+			trinket = new/obj/item/reagent_containers/food/snacks/ingredient/egg/bee/buddy(src)
+		else
+			trinket = new/obj/item/reagent_containers/food/snacks/ingredient/egg/bee(src)
 	else
 		trinket = new T(src)
 
