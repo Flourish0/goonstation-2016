@@ -544,6 +544,23 @@
 	id = "leftfeet"
 	points = 1
 	isPositive = 0
+	
+/obj/trait/beestfriend
+	name = "BEEst friend (-1) \[Trinkets\]"
+	cleanName = "BEEst friend"
+	desc = "Start with a bee egg as your trinket."
+	id = "beestfriend"
+	points = -1
+	isPositive = 1
+	category = "trinkets"
+
+/obj/trait/happyfeet
+	name = "Happyfeet (-1)"
+	cleanName = "Happyfeet"
+	desc = "Sometimes people can't help but dance along with you."
+	id = "happyfeet"
+	points = -1
+	isPositive = 1
 /*
 /obj/trait/lizard
 	name = "Lizard (-1) \[Race\]"
