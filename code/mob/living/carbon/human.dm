@@ -1048,7 +1048,20 @@
 							else
 								message = "<B>[src]</b> [act]s."
 				else
-					message = "<B>[src]</B> struggles to move."
+					if (param)
+						switch(act)
+							if ("nod")
+								message = "<B>[src]</B> [act]s to [param]."
+							if ("glare","stare","look","leer")
+								message = "<B>[src]</B> [act]s at [param]."
+							else
+								message = "<B>[src]</B> struggles to move."
+					else
+						switch(act)
+							if ("nod", "glare", "stare", "look", "leer")
+								message = "<B>[src]</b> [act]s."
+							else
+								message = "<B>[src]</B> struggles to move."
 				m_type = 1
 
 			// basic emotes that change the wording a bit
@@ -1451,23 +1464,35 @@
 
 			if ("dance", "boogie")
 				if (src.emote_check(voluntary, 50))
-					if (iswizard(src) && prob(10))
-						message = pick("<span style=\"color:red\"><B>[src]</B> breaks out the most unreal dance move you've ever seen!</span>", "<span style=\"color:red\"><B>[src]'s</B> dance move borders on the goddamn diabolical!</span>")
-						src.say("GHET DAUN!")
-						animate_flash_color_fill(src,"#5C0E80", 1, 10)
-						animate_levitate(src, 1, 10)
-						spawn(0) // some movement to make it look cooler
-							for (var/i = 0, i < 10, i++)
-								src.dir = turn(src.dir, 90)
-								sleep(2)
-
-						var/datum/effects/system/spark_spread/s = unpool(/datum/effects/system/spark_spread)
-						s.set_up(3, 1, src)
-						s.start()
-
+					if (src.restrained()) // check this first for convenience
+						message = "<B>[src]</B> twitches feebly in time to music only they can hear."
 					else
-						if (!src.restrained())
+						if (iswizard(src) && prob(10))
+							message = pick("<span style=\"color:red\"><B>[src]</B> breaks out the most unreal dance move you've ever seen!</span>", "<span style=\"color:red\"><B>[src]'s</B> dance move borders on the goddamn diabolical!</span>")
+							src.say("GHET DAUN!")
+							animate_flash_color_fill(src,"#5C0E80", 1, 10)
+							animate_levitate(src, 1, 10)
+							spawn(0) // some movement to make it look cooler
+								for (var/i = 0, i < 10, i++)
+									src.dir = turn(src.dir, 90)
+									sleep(2)
 
+							var/datum/effects/system/spark_spread/s = unpool(/datum/effects/system/spark_spread)
+							s.set_up(3, 1, src)
+							s.start()
+						else if (ismonkey(src)) // downside: now you can't spam upside: visuals
+							message = "<B>[src]</B> dances around happily."
+							spawn(0)
+								for (var/i = 0, i < 4, i++)
+									src.pixel_x+= 1
+									sleep(1)
+								for (var/i = 0, i < 4, i++)
+									src.dir = turn(src.dir, -90)
+									sleep(2)
+								for (var/i = 0, i < 4, i++)
+									src.pixel_x-= 1
+									sleep(1)
+						else
 							// implement some special visual moves
 							var/dancemove = rand(1,5)
 
@@ -1514,39 +1539,45 @@
 
 								// todo: add context-sensitive break dancing and some other goofy shit
 
+						// now wizards can get these to work with ghet daun
+						// and monkeys can get these to work in general
+						spawn(5)
+							var/beeMax = 15
+							for (var/obj/critter/domestic_bee/responseBee in range(7, src))
+								if (!responseBee.alive)
+									continue
 
-							spawn(5)
-								var/beeMax = 15
-								for (var/obj/critter/domestic_bee/responseBee in range(7, src))
-									if (!responseBee.alive)
-										continue
+								if (beeMax-- < 0)
+									break
 
-									if (beeMax-- < 0)
-										break
+								responseBee.dance_response()
 
-									responseBee.dance_response()
+						spawn(5)
+							var/parrotMax = 15
+							for (var/obj/critter/parrot/responseParrot in range(7, src))
+								if (!responseParrot.alive)
+									continue
+								if (parrotMax-- < 0)
+									break
+								responseParrot.dance_response()
 
-							spawn(5)
-								var/parrotMax = 15
-								for (var/obj/critter/parrot/responseParrot in range(7, src))
-									if (!responseParrot.alive)
-										continue
-									if (parrotMax-- < 0)
-										break
-									responseParrot.dance_response()
+						if (src.traitHolder && src.traitHolder.hasTrait("happyfeet"))
+							if (prob(20))
+								spawn(5)
+									for (var/mob/living/carbon/human/responseHuman in range(1, src))
+										if (responseHuman.paralysis || responseHuman.sleeping || responseHuman.stunned || (responseHuman == src))
+											continue
+										responseHuman.emote("dance")
 
-							if (src.reagents)
-								if (src.reagents.has_reagent("ants") && src.reagents.has_reagent("mutagen"))
-									var/ant_amt = src.reagents.get_reagent_amount("ants")
-									var/mut_amt = src.reagents.get_reagent_amount("mutagen")
-									src.reagents.del_reagent("ants")
-									src.reagents.del_reagent("mutagen")
-									src.reagents.add_reagent("spiders", ant_amt + mut_amt)
-									boutput(src, "<span style=\"color:blue\">The ants arachnify.</span>")
-									playsound(get_turf(src), "sound/effects/bubbles.ogg", 80, 1)
-
-						else
-							message = "<B>[src]</B> twitches feebly in time to music only they can hear."
+						if (src.reagents)
+							if (src.reagents.has_reagent("ants") && src.reagents.has_reagent("mutagen"))
+								var/ant_amt = src.reagents.get_reagent_amount("ants")
+								var/mut_amt = src.reagents.get_reagent_amount("mutagen")
+								src.reagents.del_reagent("ants")
+								src.reagents.del_reagent("mutagen")
+								src.reagents.add_reagent("spiders", ant_amt + mut_amt)
+								boutput(src, "<span style=\"color:blue\">The ants arachnify.</span>")
+								playsound(get_turf(src), "sound/effects/bubbles.ogg", 80, 1)
 
 			if ("flip")
 				if (src.emote_check(voluntary, 50) && !src.shrunk)
