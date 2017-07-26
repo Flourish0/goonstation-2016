@@ -591,10 +591,56 @@
 					. = "<B>[mob.name]</B> scretches."
 			if("sulk")
 				. = "<B>[mob.name]</B> sulks down sadly."
-			// if("dance")
-				// if (!mob.restrained())
-					// . = "<B>[mob.name]</B> dances around happily."
-						// was moved, but saving just in case
+			if("dance")
+				if (!mob.restrained())
+					. = "<B>[mob.name]</B> dances around happily."
+					spawn(0)
+						for (var/i = 0, i < 4, i++)
+							src.mob.pixel_x+= 1
+							sleep(1)
+						for (var/i = 0, i < 4, i++)
+							src.mob.dir = turn(src.mob.dir, -90)
+							sleep(2)
+						for (var/i = 0, i < 4, i++)
+							src.mob.pixel_x-= 1
+							sleep(1)
+					spawn(5)
+						var/beeMax = 15
+						for (var/obj/critter/domestic_bee/responseBee in range(7, src.mob))
+							if (!responseBee.alive)
+								continue
+
+							if (beeMax-- < 0)
+								break
+
+							responseBee.dance_response()
+
+					spawn(5)
+						var/parrotMax = 15
+						for (var/obj/critter/parrot/responseParrot in range(7, src.mob))
+							if (!responseParrot.alive)
+								continue
+							if (parrotMax-- < 0)
+								break
+							responseParrot.dance_response()
+
+					if (src.mob.traitHolder && src.mob.traitHolder.hasTrait("happyfeet"))
+						if (prob(20))
+							spawn(5)
+								for (var/mob/living/carbon/human/responseMonkey in range(1, src.mob)) // they don't have to be monkeys, but it's signifying monkey code
+									if (responseMonkey.stat || responseMonkey.paralysis || responseMonkey.sleeping || responseMonkey.stunned || (responseMonkey == src.mob))
+										continue
+									responseMonkey.emote("dance")
+									
+					if (src.mob.reagents)
+						if (src.mob.reagents.has_reagent("ants") && src.mob.reagents.has_reagent("mutagen"))
+							var/ant_amt = src.mob.reagents.get_reagent_amount("ants")
+							var/mut_amt = src.mob.reagents.get_reagent_amount("mutagen")
+							src.mob.reagents.del_reagent("ants")
+							src.mob.reagents.del_reagent("mutagen")
+							src.mob.reagents.add_reagent("spiders", ant_amt + mut_amt)
+							boutput(src.mob, "<span style=\"color:blue\">The ants arachnify.</span>")
+							playsound(get_turf(src.mob), "sound/effects/bubbles.ogg", 80, 1)
 			if("roll")
 				if (!mob.restrained())
 					. = "<B>[src.name]</B> rolls."
