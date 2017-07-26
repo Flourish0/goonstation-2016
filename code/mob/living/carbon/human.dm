@@ -1480,18 +1480,6 @@
 							var/datum/effects/system/spark_spread/s = unpool(/datum/effects/system/spark_spread)
 							s.set_up(3, 1, src)
 							s.start()
-						else if (ismonkey(src)) // downside: now you can't spam upside: visuals
-							message = "<B>[src]</B> dances around happily."
-							spawn(0)
-								for (var/i = 0, i < 4, i++)
-									src.pixel_x+= 1
-									sleep(1)
-								for (var/i = 0, i < 4, i++)
-									src.dir = turn(src.dir, -90)
-									sleep(2)
-								for (var/i = 0, i < 4, i++)
-									src.pixel_x-= 1
-									sleep(1)
 						else
 							// implement some special visual moves
 							var/dancemove = rand(1,5)
@@ -1540,7 +1528,6 @@
 								// todo: add context-sensitive break dancing and some other goofy shit
 
 						// now wizards can get these to work with ghet daun
-						// and monkeys can get these to work in general
 						spawn(5)
 							var/beeMax = 15
 							for (var/obj/critter/domestic_bee/responseBee in range(7, src))
@@ -1565,7 +1552,7 @@
 							if (prob(20))
 								spawn(5)
 									for (var/mob/living/carbon/human/responseHuman in range(1, src))
-										if (responseHuman.paralysis || responseHuman.sleeping || responseHuman.stunned || (responseHuman == src))
+										if (responseHuman.stat || responseHuman.paralysis || responseHuman.sleeping || responseHuman.stunned || (responseHuman == src))
 											continue
 										responseHuman.emote("dance")
 
