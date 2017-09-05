@@ -769,7 +769,7 @@
 						M.stunned+= 2
 						return
 					else
-						boutput(M, "<span style=\"color:red\">The stink of the surströmming combines with your inherent body funk to create a stench of BIBLICAL PROPORTIONS!</span>")
+						boutput(M, "<span style=\"color:red\">The stink of the surstrÃ¶mming combines with your inherent body funk to create a stench of BIBLICAL PROPORTIONS!</span>")
 						M.name_suffix("the Stinky")
 						M.UpdateName()
 		..()
@@ -779,9 +779,9 @@
 		..()
 		if (usr.bioHolder.HasEffect("accent_swedish"))
 			if (src.icon_state == "surs_closed")
-				boutput(usr, "Oooh, a can of surströmming! It's been a while since you've seen one of these. It looks like it's ready to eat.")
+				boutput(usr, "Oooh, a can of surstrÃ¶mming! It's been a while since you've seen one of these. It looks like it's ready to eat.")
 			else
-				boutput(usr, "Oooh, a can of surströmming! It's been a while since you've seen one of these. It smells heavenly!")
+				boutput(usr, "Oooh, a can of surstrÃ¶mming! It's been a while since you've seen one of these. It smells heavenly!")
 			return
 		else
 			if (src.icon_state == "surs_closed")
@@ -1647,6 +1647,22 @@
 	amount = 2
 	heal_amt = 2
 	food_color = "#6A532D"
+	
+/obj/item/reagent_containers/food/snacks/pickle
+	name = "pickle"
+	desc = "Crunchy, sour, and a bit savory; perfect for sandwiches or as a standalone snack."
+	icon = 'icons/obj/foodNdrink/food_snacks.dmi'
+	icon_state = "pickle"
+	amount = 2
+	heal_amt = 1
+	
+/obj/item/reagent_containers/food/snacks/onionchips
+	name = "onion chips"
+	desc = "Scrumpdillyicious."
+	icon = 'icons/obj/foodNdrink/food_snacks.dmi'
+	icon_state = "chips-onion"
+	amount = 3
+	heal_amt = 2
 
 // boy i wish byond had static members doop doop
 var/list/valid_jellybean_reagents = (typesof(/datum/reagent) - /datum/reagent)
