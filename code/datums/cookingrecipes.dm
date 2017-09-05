@@ -550,6 +550,13 @@
 	item2 = /obj/item/reagent_containers/food/snacks/ingredient/meat/bacon
 	cookbonus = 5
 	output = /obj/item/reagent_containers/food/snacks/toastbacon
+	
+/datum/cookingrecipe/eggtoast
+	item1 = /obj/item/reagent_containers/food/snacks/breadslice
+	item2 = /obj/item/reagent_containers/food/snacks/ingredient/egg
+	item3 = /obj/item/reagent_containers/food/snacks/ingredient/egg
+	cookbonus = 5
+	output = /obj/item/reagent_containers/food/snacks/toastegg
 
 /datum/cookingrecipe/elvischeesetoast
 	item1 = /obj/item/reagent_containers/food/snacks/breadslice/elvis
@@ -562,6 +569,13 @@
 	item2 = /obj/item/reagent_containers/food/snacks/ingredient/meat/bacon
 	cookbonus = 5
 	output = /obj/item/reagent_containers/food/snacks/toastbacon/elvis
+	
+/datum/cookingrecipe/elviseggtoast
+	item1 = /obj/item/reagent_containers/food/snacks/breadslice/elvis
+	item2 = /obj/item/reagent_containers/food/snacks/ingredient/egg
+	item3 = /obj/item/reagent_containers/food/snacks/ingredient/egg
+	cookbonus = 5
+	output = /obj/item/reagent_containers/food/snacks/toastegg/elvis
 
 /datum/cookingrecipe/breakfast
 	item1 = /obj/item/reagent_containers/food/snacks/ingredient/meat/bacon
@@ -689,6 +703,14 @@
 	item3 = /obj/item/reagent_containers/food/snacks/candy
 	cookbonus = 6
 	output = /obj/item/reagent_containers/food/snacks/moon_pie/chocolate
+	
+/datum/cookingrecipe/onionchips
+	item1 = /obj/item/reagent_containers/food/snacks/onion_slice
+	item2 = /obj/item/reagent_containers/food/snacks/onion_slice
+	item3 = /obj/item/reagent_containers/food/snacks/plant/garlic
+	item4 = /obj/item/reagent_containers/food/snacks/ingredient/cheese
+	cookbonus = 15
+	output = /obj/item/reagent_containers/food/snacks/onionchips
 
 /datum/cookingrecipe/fries
 	item1 = /obj/item/reagent_containers/food/snacks/ingredient/chips
@@ -1158,3 +1180,22 @@
 	item2 = /obj/item/reagent_containers/food/snacks/ingredient/oatmeal
 	cookbonus = 6
 	output = /obj/item/reagent_containers/food/snacks/granola_bar
+	
+/datum/cookingrecipe/beefood
+	item1 = /obj/item/reagent_containers/food/snacks/ingredient/honey
+	item2 = /obj/item/plant/wheat
+	item3 = /obj/item/reagent_containers/food/snacks/yuck
+	cookbonus = 10
+	output = /obj/item/reagent_containers/food/snacks/beefood
+
+/datum/cookingrecipe/butters
+	item1 = /obj/item/clothing/head/butt
+	item2 = /obj/item/reagent_containers/food/drinks/milk
+	cookbonus = 20
+	output = /obj/item/reagent_containers/food/snacks/condiment/butters	
+	
+/datum/cookingrecipe/lipstick
+	item1 = /obj/item/pen/crayon
+	item2 = /obj/item/item_box/figure_capsule
+	cookbonus = 10
+	output = /obj/item/pen/crayon/lipstick	
