@@ -27,7 +27,7 @@
 
 /obj/item/reagent_containers/food/snacks/condiment/ketchup
 	name = "ketchup"
-	desc = "Pureéd tomatoes as a sauce."
+	desc = "PureÃ©d tomatoes as a sauce."
 	icon_state = "ketchup"
 	initial_volume = 30
 
@@ -117,6 +117,19 @@
 			src.reagents.trans_to(target, 20)
 			qdel (src)
 		else return
+		
+/obj/item/reagent_containers/food/snacks/condiment/butters
+	name = "butt-er"
+	desc = "Fluffy and fragrant."
+	icon_state = "butters"
+	amount = 1
+	heal_amt = 3
+	initial_volume = 20
+
+	New()
+		..()
+		reagents.add_reagent("cholesterol", 20)
+	
 
 /obj/item/shaker
 	name = "shaker"
