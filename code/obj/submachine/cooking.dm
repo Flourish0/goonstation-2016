@@ -334,6 +334,7 @@ var/list/oven_recipes = list()
 			*/
 			src.recipes += new /datum/cookingrecipe/nougat(src)
 			src.recipes += new /datum/cookingrecipe/cereal_honey(src)
+			src.recipes += new /datum/cookingrecipe/b_cupcake(src)
 			src.recipes += new /datum/cookingrecipe/beefood(src)
 
 			src.recipes += new /datum/cookingrecipe/bakedpotato(src)
