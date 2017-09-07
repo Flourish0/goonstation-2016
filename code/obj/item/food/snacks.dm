@@ -1656,6 +1656,10 @@
 	amount = 2
 	heal_amt = 1
 	
+	New()
+		..()
+		reagents.add_reagent("juice_pickle", 5)
+	
 /obj/item/reagent_containers/food/snacks/onionchips
 	name = "onion chips"
 	desc = "Scrumpdillyicious."
