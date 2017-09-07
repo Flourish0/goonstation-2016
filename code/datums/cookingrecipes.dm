@@ -1221,7 +1221,7 @@
 /datum/cookingrecipe/butters
 	item1 = /obj/item/clothing/head/butt
 	item2 = /obj/item/reagent_containers/food/drinks/milk
-	cookbonus = 20
+	cookbonus = 14
 	output = /obj/item/reagent_containers/food/snacks/condiment/butters	
 	
 /datum/cookingrecipe/lipstick
