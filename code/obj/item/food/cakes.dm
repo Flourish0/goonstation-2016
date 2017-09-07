@@ -15,7 +15,7 @@
 		
 /obj/item/reagent_containers/food/snacks/b_cupcake
 	name = "birthday cupcake"
-	desc = "A little birthday cupcake for a bee. May not taste good to non-bees. This doesn't seem to be handmade; maybe that's why it looks so generic."
+	desc = "A little birthday cupcake for a bee. May not taste good to non-bees. This doesn't seem to be homemade; maybe that's why it looks so generic."
 	icon = 'icons/obj/foodNdrink/food_dessert.dmi'
 	icon_state = "b_cupcake"
 	amount = 4
