@@ -262,7 +262,7 @@ datum
 			taste = "spooky"
 
 		fooddrink/alcoholic/beepskybeer
-			name = "Beepskybr‰u Security Schwarzbier"
+			name = "Beepskybr√§u Security Schwarzbier"
 			id = "beepskybeer"
 			description = "A dark German beer, typically served with dark bread, cream cheese, and an intense appreciation for the law."
 			reagent_state = LIQUID
@@ -1118,7 +1118,7 @@ datum
 			reagent_state = LIQUID
 
 		fooddrink/alcoholic/pinacolada
-			name = "PiÒa Colada"
+			name = "Pi√±a Colada"
 			id = "pinacolada"
 			fluid_r = 255
 			fluid_g = 255
@@ -2308,6 +2308,14 @@ datum
 			description = "A salty brine containing garlic and dill, typically used to ferment and pickle cucumbers."
 			reagent_state = LIQUID
 			thirst_value = 1
+			on_mob_life(var/mob/M)
+				if(!M) M = holder.my_atom
+				if(prob(15))
+					M.reagents.add_reagent("charcoal", 1)
+				if(prob(15))
+					M.reagents.add_reagent("antihol", 1)
+				..(M)
+				return
 
 		fooddrink/cocktail_citrus
 			name = "triple citrus"
