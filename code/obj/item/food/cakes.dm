@@ -12,6 +12,22 @@
 	New()
 		..()
 		src.reagents.add_reagent("uranium", 5)
+		
+/obj/item/reagent_containers/food/snacks/b_cupcake
+	name = "birthday cupcake"
+	desc = "A little birthday cupcake for a bee. May not taste good to non-bees. This doesn't seem to be handmade; maybe that's why it looks so generic."
+	icon = 'icons/obj/foodNdrink/food_dessert.dmi'
+	icon_state = "b_cupcake"
+	amount = 4
+	heal_amt = 1
+	doants = 0
+
+	New()
+		..()
+		reagents.add_reagent("nectar", 10)
+		reagents.add_reagent("honey", 10)
+		reagents.add_reagent("cornstarch", 5)
+		reagents.add_reagent("pollen", 20)
 
 /obj/item/reagent_containers/food/snacks/cake/
 	name = "sponge cake"
