@@ -1185,7 +1185,7 @@
 	item1 = /obj/item/reagent_containers/food/snacks/ingredient/honey
 	item2 = /obj/item/plant/wheat
 	item3 = /obj/item/reagent_containers/food/snacks/yuck
-	cookbonus = 10
+	cookbonus = 22
 	output = /obj/item/reagent_containers/food/snacks/beefood
 	
 /datum/cookingrecipe/b_cupcake
@@ -1193,7 +1193,7 @@
 	item2 = /obj/item/reagent_containers/food/snacks/ingredient/sugar
 	item3 = /obj/item/reagent_containers/food/snacks/ingredient/royal_jelly
 	item4 = /obj/item/device/candle/small
-	cookbonus = 14
+	cookbonus = 22
 	output = /obj/item/reagent_containers/food/snacks/b_cupcake
 
 	specialOutput(var/obj/submachine/ourCooker)
