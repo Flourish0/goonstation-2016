@@ -1200,21 +1200,13 @@
 		if (!ourCooker)
 			return null
 
-		var/obj/item/reagent_containers/food/snacks/b_cupcake = new
-
-		b_cupcake.name = "birthday cupcake"
+		var/obj/item/reagent_containers/food/snacks/b_cupcake = new /obj/item/reagent_containers/food/snacks/b_cupcake
+		
 		b_cupcake.desc = "A little birthday cupcake for a bee. May not taste good to non-bees."
 		var/icon/I = new /icon('icons/obj/foodNdrink/food_dessert.dmi',"b_cupcake")
 		var/random_color = rgb(rand(1,255), rand(1,255), rand(1,255))
 		I.Blend(random_color, ICON_ADD)
 		b_cupcake.icon = I
-		b_cupcake.amount = 4
-		b_cupcake.heal_amt = 1
-		b_cupcake.doants = 0
-		b_cupcake.reagents.add_reagent("nectar", 10)
-		b_cupcake.reagents.add_reagent("honey", 10)
-		b_cupcake.reagents.add_reagent("cornstarch", 5)
-		b_cupcake.reagents.add_reagent("pollen", 20)
 			
 		return b_cupcake
 
