@@ -328,3 +328,31 @@
 		src.pixel_x += rand(-3,3)
 		src.pixel_y += rand(-3,3)
 		reagents.add_reagent("porktonium", 5)
+		
+/obj/item/reagent_containers/food/snacks/toastegg
+	name = "eggs on toast"
+	desc = "Crunchy, eggy goodness."
+	icon = 'icons/obj/foodNdrink/food_bread.dmi'
+	icon_state = "eggtoast"
+	amount = 2
+	heal_amt = 3
+	food_color = "#CC9966"
+	real_name = "eggs on toast"
+	initial_volume = 30
+
+	elvis
+		name = "eggs on elvis toast"
+		desc = "More than enough calories to make you leave the metaphorical building."
+		icon_state = "eggelvis"
+		amount = 3
+		heal_amt = 6
+		real_name ="eggs on elvis toast"
+
+		New()
+			..()
+			reagents.add_reagent("essenceofelvis",25)
+
+	New()
+		..()
+		src.pixel_x += rand(-3,3)
+		src.pixel_y += rand(-3,3)
