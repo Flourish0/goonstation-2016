@@ -503,7 +503,7 @@
 	<li>Knead the sugar and dough together with your hands.
 	</div>
 
-	<h3>
+	<hr>
 	<h2>Nougat Bar</h2>
 	<h3>Ingredients</h3>
 	<div class = "nougatbar">
@@ -515,7 +515,7 @@
 	<li>Cook the ingredients in the oven for 5 seconds on low.
 	</div>
 
-	<h3>
+	<hr>
 	<h2>Granola Bar</h2>
 	<h3>Ingredients</h3>
 	<div class = "granolabar">
@@ -527,7 +527,7 @@
 	<li>Cook the ingredients in the oven for 5 seconds on low.
 	</div>
 	
-	<h3>
+	<hr>
 	<h2>Onion Chips</h2>
 	<h3>Ingredients</h3>
 	<div class = "onionchips">
@@ -538,6 +538,59 @@
 	<h3>Steps</h3>
 	<div class = "onionchipssteps">
 	<li>Cook the ingredients in the oven for 7 seconds on high.
+	</div>
+	
+	<hr>
+	<h2>Butt-er</h2>
+	<h3>Ingredients</h3>
+	<div class = "butters">
+	<li>1 Butt
+	<li>1 Milk
+	</div>
+	<h3>Steps</h3>
+	<div class = "butterssteps">
+	<li>Mix the butt and egg together.
+	</div>
+	
+	<hr>
+	<h2>Pickle</h2>
+	<h3>Ingredients</h3>
+	<div class = "pickle">
+	<li>1 Cucumber
+	</div>
+	<h3>Steps</h3>
+	<div class = "picklesteps">
+	<li>Place the cucumber in a food processor and hit process.
+	</div>
+	<hr>
+	
+	<p><i> following items are for man's best friend: bees.</i></p>
+	
+	<hr>
+	<h2>Bee Kibble</h2>
+	<h3>Ingredients</h3>
+	<div class = "beekibble">
+	<li>1 Wheat
+	<li>1 Honey Blob
+	<li>1 ????
+	</div>
+	<h3>Steps</h3>
+	<div class = "beekibblesteps">
+	<li>Cook the ingredients in the oven for 10 seconds on high.
+	</div>
+	
+	<hr>
+	<h2>Birthday Cupcake</h2>
+	<h3>Ingredients</h3>
+	<div class = "birthdaycupcake">
+	<li>1 Bee Kibble
+	<li>1 Royal Jelly
+	<li>1 Sugar
+	<li>1 Small Candle
+	</div>
+	<h3>Steps</h3>
+	<div class = "birthdaycupcakesteps">
+	<li>Cook the ingredients in the oven for 10 seconds on high.
 	</div>
 	"}
 
