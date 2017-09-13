@@ -564,7 +564,7 @@
 	</div>
 	<hr>
 	
-	<p><i> following items are for man's best friend: bees.</i></p>
+	<p><i>The following items are for man's best friend: bees.</i></p>
 	
 	<hr>
 	<h2>Bee Kibble</h2>
