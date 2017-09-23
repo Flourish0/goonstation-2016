@@ -262,7 +262,7 @@ datum
 			taste = "spooky"
 
 		fooddrink/alcoholic/beepskybeer
-			name = "Beepskybr‰u Security Schwarzbier"
+			name = "Beepskybr√§u Security Schwarzbier"
 			id = "beepskybeer"
 			description = "A dark German beer, typically served with dark bread, cream cheese, and an intense appreciation for the law."
 			reagent_state = LIQUID
@@ -1118,7 +1118,7 @@ datum
 			reagent_state = LIQUID
 
 		fooddrink/alcoholic/pinacolada
-			name = "PiÒa Colada"
+			name = "Pi√±a Colada"
 			id = "pinacolada"
 			fluid_r = 255
 			fluid_g = 255
@@ -1146,6 +1146,63 @@ datum
 			alch_strength = 7
 			description = "A strong champagne cocktail."
 			reagent_state = LIQUID
+			
+		fooddrink/alcoholic/mintjulep
+			name = "Mint Julep"
+			id = "mintjulep"
+			fluid_r = 240
+			fluid_g = 208
+			fluid_b = 83
+			alch_strength = 0.3
+			description = "A refreshing cocktail with a minty aftertaste."
+			reagent_state = LIQUID
+			
+		fooddrink/alcoholic/mojito
+			name = "Mojito"
+			id = "mojito"
+			fluid_r = 198
+			fluid_g = 220
+			fluid_b = 92
+			alch_strength = 0.2
+			description = "Rum with some lime juice, sugar, and mint."
+			reagent_state = LIQUID
+
+		fooddrink/alcoholic/cremedementhe
+			name = "Cr√®me de Menthe"
+			id = "cremedementhe"
+			fluid_r = 55
+			fluid_g = 179
+			fluid_b = 102
+			alch_strength = 0.4
+			description = "Strikingly green and surprisingly sweet."
+			reagent_state = LIQUID
+
+		fooddrink/alcoholic/grasshopper
+			name = "Grasshopper"
+			id = "grasshopper"
+			fluid_r = 114
+			fluid_g = 235
+			fluid_b = 186
+			alch_strength = 0.2
+			description = "Patience."
+			reagent_state = LIQUID
+			var/bioeffect_length = 0
+			
+			pooled()
+				..()
+				bioeffect_length = 0
+			
+			on_mob_life(var/mob/living/carbon/human/M)
+				
+				if(!M) M = holder.my_atom
+				if(!M.mutantrace)
+					if (src.volume <= src.depletion_rate)
+						if(M.bioHolder)
+							M.bioHolder.AddEffect("roach",0,bioeffect_length) //length of bioeffect proportionate to length grasshopper was in human
+					else
+						bioeffect_length++
+				..(M)
+
 
 		fooddrink/alcoholic/negroni
 			name = "Negroni"
@@ -1633,6 +1690,22 @@ datum
 					M.show_text("You feel calm and relaxed.", "blue")
 				..(M)
 				return
+
+		fooddrink/mint_tea
+			name = "tea"
+			id = "mint_tea"
+			description = "An aromatic beverage derived from the leaves of the camellia sinensis plant. There's a little bit of mint in it."
+			reagent_state = LIQUID
+			fluid_r = 117
+			fluid_g = 120
+			fluid_b = 65
+			transparency = 232
+			thirst_value = 1.5
+
+			on_mob_life(var/mob/living/carbon/human/M)
+				if (M.sims)
+					M.sims.affectMotive("energy",0.3)
+				..(M)
 
 		fooddrink/chocolate
 			name = "chocolate"
@@ -2174,6 +2247,16 @@ datum
 						boutput(M, "<span style=\"color:red\">A slice of pepperoni slaps you!</span>")
 						playsound(M.loc, "sound/weapons/slap.ogg", 50, 1)
 						M.TakeDamage("head", 1, 0, 0, DAMAGE_BLUNT)
+
+		fooddrink/mint
+			name = "mint" //calling it mint juice is weiiird
+			id = "mint"
+			fluid_r = 167
+			fluid_g = 238
+			fluid_b = 159
+			transparency = 220
+			description = "A light green liquid extracted from mint leaves."
+			reagent_state = LIQUID
 
 		fooddrink/juice_lime
 			name = "lime juice"
