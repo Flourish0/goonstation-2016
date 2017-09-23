@@ -330,6 +330,7 @@ var/list/oven_recipes = list()
 			src.recipes += new /datum/cookingrecipe/pizza_plain(src)
 			*/
 			src.recipes += new /datum/cookingrecipe/nougat(src)
+			src.recipes += new /datum/cookingrecipe/candy_cane(src)
 			src.recipes += new /datum/cookingrecipe/cereal_honey(src)
 
 			src.recipes += new /datum/cookingrecipe/bakedpotato(src)
