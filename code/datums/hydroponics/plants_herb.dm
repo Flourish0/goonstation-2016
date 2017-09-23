@@ -83,6 +83,22 @@
 	genome = 1
 	assoc_reagents = list("charcoal")
 	mutations = list(/datum/plantmutation/venne/toxic,/datum/plantmutation/venne/curative)
+	
+/datum/plant/mint
+	name = "Mint"
+	category = "Herb"
+	seedcolor = "#258934"
+	crop = /obj/item/plant/herb/mint
+	starthealth = 20
+	growtime = 80
+	harvtime = 100
+	cropsize = 5
+	harvests = 1
+	isgrass = 1
+	endurance = 3
+	nectarlevel = 5
+	genome = 1
+	assoc_reagents = list("mint")
 
 /datum/plant/cannabis
 	name = "Cannabis"
