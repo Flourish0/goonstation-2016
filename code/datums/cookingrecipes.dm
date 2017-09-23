@@ -139,6 +139,12 @@
 	item2 = /obj/item/reagent_containers/food/snacks/ingredient/sugar
 	cookbonus = 5
 	output = /obj/item/reagent_containers/food/snacks/candy/nougat
+	
+/datum/cookingrecipe/candy_cane
+	item1 = /obj/item/plant/herb/mint
+	item2 = /obj/item/reagent_containers/food/snacks/ingredient/sugar
+	cookbonus = 5
+	output = /obj/item/reagent_containers/food/snacks/candy/candy_cane
 
 /datum/cookingrecipe/waffles
 	item1 = /obj/item/reagent_containers/food/snacks/ingredient/dough
