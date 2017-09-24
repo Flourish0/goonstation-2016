@@ -365,6 +365,20 @@
 	<li> Mix the ingredients together
 	<li>Cook the ingredients in the oven for 7 seconds on low
 	</div>
+	
+	<hr>
+	<h2>Mint Chutney</h2>
+	<h3>Ingredients</h3>
+	<div class = "mintchutney">
+	<li>1 Mint Leaves
+	<li>1 Garlic
+	<li>1 Onion
+	<li>1 Chili Pepper
+	</div>
+	<h3>Steps</h3>
+	<div class = "mintchutneysteps">
+	<li>Cook the ingredients in the oven for 7 seconds on high.
+	</div>
 
 	<hr>
 	<h2>Donut</h2>
