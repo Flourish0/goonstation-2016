@@ -913,6 +913,14 @@
 	amt1 = 2
 	cookbonus = 8
 	output = /obj/item/reagent_containers/food/snacks/soup/tomato
+	
+/datum/cookingrecipe/mint_chutney
+	item1 = /obj/item/plant/herb/mint
+	item2 = /obj/item/reagent_containers/food/snacks/plant/chili
+	item3 = /obj/item/reagent_containers/food/snacks/plant/garlic
+	item4 = /obj/item/reagent_containers/food/snacks/plant/onion
+	cookbonus = 14
+	output = /obj/item/reagent_containers/food/snacks/soup/mint_chutney
 
 /datum/cookingrecipe/chili
 	item1 = /obj/item/reagent_containers/food/snacks/ingredient/meat/
