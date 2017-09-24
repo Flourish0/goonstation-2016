@@ -459,6 +459,16 @@ datum
 			mix_phrase = "The tea somehow smells even nicer than before."
 			mix_sound = 'sound/misc/drinkfizz.ogg'
 			drinkrecipe = 1
+			
+		mint_tea
+			name = "tea"
+			id = "mint_tea"
+			result = "mint_tea"
+			required_reagents = list("mint" = 1, "tea" = 1)
+			result_amount = 2
+			mix_phrase = "The tea somehow smells even more refreshing than before."
+			mix_sound = 'sound/misc/drinkfizz.ogg'
+			drinkrecipe = 1
 
 		cocktail_citrus
 			name = "Triple Citrus"
@@ -874,6 +884,52 @@ datum
 			result_amount = 3
 			mix_phrase = "The drink fizzes and turns a dark gold."
 			mix_sound = 'sound/misc/drinkfizz.ogg'
+			
+		cocktail_mintjulep
+			name = "Mint Julep"
+			id = "mintjulep"
+			result = "mintjulep"
+			required_reagents = list("mint" = 1, "bourbon" = 1, "sugar" = 1)
+			result_amount = 3
+			mix_phrase = "The drink fizzes into a pleasantly minty cocktail."
+			mix_sound = 'sound/misc/drinkfizz.ogg'
+		
+		cocktail_mojito
+			name = "Mojito"
+			id = "mojito"
+			result = "mojito"
+			required_reagents = list("mint" = 1, "lime" = 1, "rum" = 1, "sugar" = 1)
+			result_amount = 4
+			mix_phrase = "The scent of summer wafts out of the container."
+			mix_sound = 'sound/misc/drinkfizz.ogg'
+			
+		cocktail_mojito/mojito2
+			id = "mojito2"
+			required_reagents = list("daiquiri" = 3, "mint" = 1)
+			result_amount = 4
+		
+		cocktail_cremedementhe
+			name = "Crème de Menthe"
+			id = "cremedementhe"
+			result = "cremedementhe"
+			required_reagents = list("mint" = 1, "vodka" = 1, "sugar" = 1)
+			result_amount = 3
+			mix_phrase = "The mint and sugar mix obligingly with the vodka."
+			mix_sound = 'sound/misc/drinkfizz.ogg'
+			
+		cocktail_grasshopper
+			name = "Grasshopper"
+			id = "grasshopper"
+			result = "grasshopper"
+			required_reagents = list ("mint" = 1, "vodka" = 1, "sugar" = 1, "chocolate" = 1, "vanilla " = 1)
+			result_amount = 5
+			mix_phrase = "The drink turns a pale frothy green."
+			mix_sound = 'sound/misc/drinkfizz.ogg'
+			
+		cocktail_grasshopper/grasshopper2
+			id = "grasshopper2"
+			required_reagents = list("cremedementhe" = 3, "chocolate" = 1, "vanilla" = 1)
+			result_amount = 5
 
 		cocktail_negroni
 			name = "Negroni"
