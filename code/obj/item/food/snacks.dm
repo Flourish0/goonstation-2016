@@ -342,6 +342,20 @@
 		..()
 		reagents.add_reagent("guacamole", 90)
 
+/obj/item/reagent_containers/food/snacks/soup/mint_chutney
+	name = "mint chutney"
+	desc = "A flavorful paste that smells strongly of mint."
+	icon_state = "mint_chutney"
+	needspoon = 1
+	amount = 6
+	heal_amt = 2
+	food_color = "#2DAB1F"
+	
+	New()
+		..()
+		reagents.add_reagent("capsaicin", 10)
+		reagents.add_reagent("mint", 40)
+
 /obj/item/reagent_containers/food/snacks/soup/chili
 	name = "chili con carne"
 	desc = "Meat pieces in a spicy pepper sauce. Delicious."
@@ -769,7 +783,7 @@
 						M.stunned+= 2
 						return
 					else
-						boutput(M, "<span style=\"color:red\">The stink of the surströmming combines with your inherent body funk to create a stench of BIBLICAL PROPORTIONS!</span>")
+						boutput(M, "<span style=\"color:red\">The stink of the surstrÃ¶mming combines with your inherent body funk to create a stench of BIBLICAL PROPORTIONS!</span>")
 						M.name_suffix("the Stinky")
 						M.UpdateName()
 		..()
@@ -779,9 +793,9 @@
 		..()
 		if (usr.bioHolder.HasEffect("accent_swedish"))
 			if (src.icon_state == "surs_closed")
-				boutput(usr, "Oooh, a can of surströmming! It's been a while since you've seen one of these. It looks like it's ready to eat.")
+				boutput(usr, "Oooh, a can of surstrÃ¶mming! It's been a while since you've seen one of these. It looks like it's ready to eat.")
 			else
-				boutput(usr, "Oooh, a can of surströmming! It's been a while since you've seen one of these. It smells heavenly!")
+				boutput(usr, "Oooh, a can of surstrÃ¶mming! It's been a while since you've seen one of these. It smells heavenly!")
 			return
 		else
 			if (src.icon_state == "surs_closed")
