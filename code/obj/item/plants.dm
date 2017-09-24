@@ -189,6 +189,11 @@
 	name = "dawning venne fibers"
 	desc = "It has a lovely sunrise coloration to it."
 	icon_state = "venneC"
+	
+/obj/item/plant/herb/mint
+	name = "mint leaves"
+	desc = "Aromatic leaves with a clean flavor."
+	icon_state = "mint"
 
 /obj/item/plant/herb/catnip
 	name = "nepeta cataria"
