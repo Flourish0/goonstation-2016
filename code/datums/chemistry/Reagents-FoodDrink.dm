@@ -1211,7 +1211,7 @@ datum
 				..(M)
 
 		fooddrink/alcoholic/freeze
-			name = "freeze"
+			name = "Freeze"
 			id = "freeze"
 			fluid_r = 149
 			fluid_g = 249
