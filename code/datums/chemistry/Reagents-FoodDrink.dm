@@ -1157,6 +1157,13 @@ datum
 			description = "A refreshing cocktail with a minty aftertaste."
 			reagent_state = LIQUID
 			
+			on_mob_life(var/mob/M)
+				if(!M) M = holder.my_atom
+				if(M.bodytemperature > 280)
+					M.bodytemperature = max(M.bodytemperature-5,280)
+				..(M)
+				return  
+			
 		fooddrink/alcoholic/mojito
 			name = "Mojito"
 			id = "mojito"
@@ -1203,6 +1210,40 @@ datum
 						bioeffect_length++
 				..(M)
 
+		fooddrink/alcoholic/freeze
+			name = "freeze"
+			id = "freeze"
+			fluid_r = 149
+			fluid_g = 249
+			fluid_b = 233
+			alch_strength = 3
+			description = "A space yeti favorite."
+			taste = "cold"
+			reagent_state = LIQUID
+			
+			on_mob_life(var/mob/M)
+				if(!M) M = holder.my_atom
+				if(M.reagents.has_reagent("chocolate"))
+					boutput(M, "<span style=\"color:blue\">The chocolate warms you up. Ahhh.</span>")
+					M.reagents.del_reagent("chocolate")
+					M.reagents.del_reagent("freeze")
+				if(M.bodytemperature > 0)
+					M.bodytemperature=max(M.bodytemperature-10,0)
+				if(prob(10))
+					boutput(M, pick("<span style=\"color:blue\"><i>Brrr...</i></span>","<span style=\"color:blue\"><i>Isn't it a bit chilly in here?</i></span>","<span style=\"color:blue\"><i>Who left an airlock open?</i></span>"))
+				if(prob(15))
+					M.emote(pick("cough","sneeze","gasp"))
+				if(prob(20))
+					M.stunned++
+				if(prob(40))
+					random_burn_damage(M, 2)
+				if(prob(volume * 0.5))
+					boutput(M, "<span style=\"color:blue\"><b>Oh. God.</b></span>")
+					M.emote("scream")
+					spawn(20)
+						M:become_ice_statue()
+				..(M)
+				return
 
 		fooddrink/alcoholic/negroni
 			name = "Negroni"
@@ -1703,9 +1744,13 @@ datum
 			thirst_value = 1.5
 
 			on_mob_life(var/mob/living/carbon/human/M)
+				if(!M) M = holder.my_atom
+				if(M.bodytemperature > 280)
+					M.bodytemperature = max(M.bodytemperature-5,280)
 				if (M.sims)
 					M.sims.affectMotive("energy",0.3)
 				..(M)
+				return
 
 		fooddrink/chocolate
 			name = "chocolate"
@@ -2257,6 +2302,13 @@ datum
 			transparency = 220
 			description = "A light green liquid extracted from mint leaves."
 			reagent_state = LIQUID
+			
+			on_mob_life(var/mob/M)
+				if(!M) M = holder.my_atom
+				if(M.bodytemperature > 280)
+					M.bodytemperature = max(M.bodytemperature-5,280)
+				..(M)
+				return
 
 		fooddrink/juice_lime
 			name = "lime juice"
