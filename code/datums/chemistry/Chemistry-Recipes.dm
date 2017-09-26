@@ -930,6 +930,15 @@ datum
 			id = "grasshopper2"
 			required_reagents = list("cremedementhe" = 3, "chocolate" = 1, "vanilla" = 1)
 			result_amount = 5
+			
+		cocktail_freeze
+			name = "Freeze"
+			id = "freeze"
+			result = "freeze"
+			required_reagents = list("menthol" = 1, "coderspleaseaddthings" = 4)
+			result_amount = 1
+			mix_phrase = "The drink turns a pale mint color and frost forms on its surface."
+			mix_sound = 'sound/misc/drinkfizz.ogg'
 
 		cocktail_negroni
 			name = "Negroni"
