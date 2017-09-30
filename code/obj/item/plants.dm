@@ -194,6 +194,8 @@
 	name = "mint leaves"
 	desc = "Aromatic leaves with a clean flavor."
 	icon_state = "mint"
+	brewable = 1
+	brew_result = "menthol"
 
 /obj/item/plant/herb/catnip
 	name = "nepeta cataria"
