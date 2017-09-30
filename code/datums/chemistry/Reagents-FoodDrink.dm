@@ -1743,12 +1743,14 @@ datum
 			transparency = 232
 			thirst_value = 1.5
 
-			on_mob_life(var/mob/living/carbon/human/M)
+			on_mob_life(var/mob/M)
 				if(!M) M = holder.my_atom
 				if(M.bodytemperature > 280)
 					M.bodytemperature = max(M.bodytemperature-5,280)
-				if (M.sims)
-					M.sims.affectMotive("energy",0.3)
+				if (ishuman(M))
+					var/mob/living/carbon/human/H = M
+					if (H.sims)
+						H.sims.affectMotive("energy",0.3)
 				..(M)
 				return
 
@@ -2361,6 +2363,9 @@ datum
 						M.emote("gasp")
 						boutput(M, "<span style=\"color:red\">Your eyes sting!</span>")
 						M.change_eye_blurry(rand(5, 20))
+			else if (method == INGEST)
+				if(M.reagents.has_reagent("menthol"))
+					M.visible_message("<b>[M]'s</b> grimaces.","<span style=\"color:red\">Yuck! This tastes awful!</span>")
 
 		fooddrink/juice_lemon
 			name = "lemon juice"
