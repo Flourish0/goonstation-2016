@@ -1173,6 +1173,16 @@ datum
 			mix_phrase = "The mixture crystallizes."
 			mix_sound = 'sound/misc/drinkfizz.ogg'
 
+		menthol
+			name = "Menthol"
+			id = "menthol"
+			result = "menthol"
+			required_reagents = list("mint"= 1, "ethanol"= 1)
+			required_temperature = T0C + 50
+			result_amount = 1
+			mix_phrase = "Large white crystals precipitate out of the mixture."
+			mix_sound = 'sound/misc/drinkfizz.ogg'
+
 		thermite
 			name = "Thermite"
 			id = "thermite"
