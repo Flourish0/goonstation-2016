@@ -281,6 +281,7 @@
 		..()
 		new /obj/item/bandage(src)
 		new /obj/item/storage/pill_bottle/salicylic_acid(src)
+		new /obj/item/storage/pill_bottle/menthol(src)
 
 		if (prob(40))
 			new /obj/item/storage/firstaid/regular(src)
@@ -331,6 +332,11 @@
 	name = "pill bottle (analgesic)"
 	desc = "Contains pills used to treat pain and fevers."
 	spawn_contents = list(/obj/item/reagent_containers/pill/salicylic_acid = 7)
+
+/obj/item/storage/pill_bottle/menthol
+	name = "pill bottle (menthol)"
+	desc = "Contains pills used to treat burns and fevers."
+	spawn_contents = list(/obj/item/reagent_containers/pill/menthol = 7)
 
 /* -------------------- Pill Bottles - Drugs -------------------- */
 
