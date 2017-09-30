@@ -184,6 +184,32 @@ datum
 					M.bodytemperature = min(M.base_body_temp, M.bodytemperature+10)
 				..(M)
 				return
+				
+		medical/menthol
+			name = "menthol"
+			id = "menthol"
+			description = "Menthol relieves burns and aches while providing a cooling sensation."
+			fluid_r = 239
+			fluid_g = 249
+			fluid_b = 202
+			transparency = 180
+			depletion_rate = 0.1
+			value = 11
+
+			on_mob_life(var/mob/M)
+				if(!M) M = holder.my_atom
+				if(prob(55))
+					M.HealDamage("All", 0, 2)
+					M.updatehealth()
+				if(M.bodytemperature > 280)
+					M.bodytemperature = max(M.bodytemperature-10,280)
+				..(M)
+				return
+			
+			reaction_mob(var/mob/living/carbon/human/M, var/method=TOUCH, var/volume)
+				if (M.sims)
+					if (method == TOUCH)
+						M.sims.affectMotive("hygiene",volume)
 
 		medical/calomel // COGWERKS CHEM REVISION PROJECT. marked for revision. should be a chelation agent
 			name = "calomel"
