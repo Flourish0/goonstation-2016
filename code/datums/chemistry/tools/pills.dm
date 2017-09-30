@@ -165,6 +165,16 @@
 		..()
 		reagents.add_reagent("salicylic_acid", 20)
 
+/obj/item/reagent_containers/pill/menthol
+	name = "menthol pill"
+	desc = "This pill looks kinda cool. It's used to treat moderate burns and fevers."
+	icon_state = "pill21"
+	initial_volume = 100
+
+	New()
+		..()
+		reagents.add_reagent("menthol", 20)
+
 /obj/item/reagent_containers/pill/silver_sulfadiazine
 	name = "silver sulfadiazine pill" //wtf
 	desc = "Used to treat burns, but it's not meant to be ingested. Welp."
