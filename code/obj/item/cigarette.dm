@@ -239,6 +239,11 @@
 	nic_free = 1
 	flavor = "capsaicin"
 
+/obj/item/clothing/mask/cigarette/menthol
+	name = "menthol cigarette"
+	desc = "Blow everyone away with your minty fresh breath!"
+	flavor = "menthol"
+
 /obj/item/clothing/mask/cigarette/random
 	desc = "A cigarette which seems to have been laced with something."
 
@@ -258,7 +263,7 @@
 		"cryoxadone","cryostylane","omnizine","jenkem","vomit","carpet","charcoal","blood","cheese","bilk","atropine",
 		"lexorin","teporone","mannitol","spaceacillin","saltpetre","anti_rad","insulin","gvomit","milk","colors","diluted_fliptonium",
 		"something","honey_tea","tea","coffee","chocolate","guacamole","juice_pickle","vanilla","enriched_msg","egg","aranesp",
-		"paper","bread","green_goop","black_goop")
+		"paper","bread","green_goop","black_goop", "mint_tea")
 		src.name = "[reagent_id_to_name(src.flavor)]-laced cigarette"
 		..()
 
@@ -307,6 +312,13 @@
 	cigtype = /obj/item/clothing/mask/cigarette/nicofree
 	icon_state = "cigpacket-b"
 	package_style = "cigpacket-b"
+
+/obj/item/cigpacket/menthol
+	name = "menthol cigarette packet"
+	desc = "Bad breath begone! Warning: Cigarettes use chemical compounds which may increase nicotine dependency."
+	cigtype = /obj/item/clothing/mask/cigarette/menthol
+	icon_state = "cigpacket-l"
+	package_style = "cigpacket-l"
 
 /obj/item/cigpacket/propuffs
 	name = "packet of Pro Puffs"
