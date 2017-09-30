@@ -171,6 +171,7 @@
 		..()
 		product_list += new/datum/data/vending_product("/obj/item/cigpacket", 20, cost=10)
 		product_list += new/datum/data/vending_product("/obj/item/cigpacket/nicofree", 20, cost=15)
+		product_list += new/datum/data/vending_product("/obj/item/cigpacket/menthol", 20, cost=15)
 		product_list += new/datum/data/vending_product("/obj/item/cigpacket/propuffs", 20, cost=20)
 		product_list += new/datum/data/vending_product("/obj/item/reagent_containers/patch/nicotine", 20, cost=15)
 		product_list += new/datum/data/vending_product("/obj/item/matchbook", 15, cost=5)
