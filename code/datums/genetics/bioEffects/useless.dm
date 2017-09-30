@@ -142,7 +142,9 @@
 			src.variant = 2
 
 	OnLife()
-		if (prob(10))
+		if(owner.reagents.has_reagent("menthol"))
+			return
+		else if (prob(10))
 			for(var/mob/living/carbon/C in view(6,get_turf(owner)))
 				if (C == owner)
 					continue
