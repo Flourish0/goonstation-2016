@@ -432,18 +432,44 @@
 
 	attackby(obj/item/W as obj, mob/user as mob)
 		if(istype(W,/obj/item/rods))
-			boutput(user, "<span style=\"color:blue\">You create an apple on a stick...</span>")
-			new/obj/item/reagent_containers/food/snacks/plant/apple/stick(get_turf(src))
-			W:amount--
-			if(!W:amount) qdel(W)
+			if(istype(src,/obj/item/reagent_containers/food/snacks/plant/apple/poison))
+				boutput(user, "<span style=\"color:blue\">You create an apple on a stick...</span>")
+				new/obj/item/reagent_containers/food/snacks/plant/apple/stick/poison(get_turf(src))
+			else
+				boutput(user, "<span style=\"color:blue\">You create a delicious apple on a stick...</span>")
+				new/obj/item/reagent_containers/food/snacks/plant/apple/stick(get_turf(src))
+			W.amount--
+			if(!W.amount) qdel(W)
 			qdel(src)
 		else ..()
 
+	poison
+		name = "delicious-looking apple"
+		desc = "Woah. This looks absolutely delicious."
+		icon_state = "papple"
+		plant_reagent = "capulettium"
+		initial_volume = 100
+	
+		New()
+			..()
+			var/datum/plantgenes/DNA = src.plantgenes
+			reagents.add_reagent("capulettium", DNA.potency)
+	
 //Apple on a stick
 /obj/item/reagent_containers/food/snacks/plant/apple/stick
 	name = "apple on a stick"
 	desc = "An apple on a stick."
 	icon_state = "apple stick"
+	
+/obj/item/reagent_containers/food/snacks/plant/apple/stick/poison
+	name = "delicious apple on a stick"
+	desc = "A delicious apple on a stick."
+	icon_state = "papple stick"
+	
+	New()
+		..()
+		reagents.add_reagent("capulettium", 10)
+		return
 
 /obj/item/reagent_containers/food/snacks/plant/banana
 	name = "unpeeled banana"
