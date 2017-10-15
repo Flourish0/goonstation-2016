@@ -948,6 +948,12 @@
 	item2 = /obj/item/reagent_containers/food/snacks/ingredient/sugar
 	cookbonus = 6
 	output = /obj/item/reagent_containers/food/snacks/candy/candy_apple
+	
+/datum/cookingrecipe/candy_apple_poison
+	item1 = /obj/item/reagent_containers/food/snacks/plant/apple/stick/poison
+	item2 = /obj/item/reagent_containers/food/snacks/ingredient/sugar
+	cookbonus = 6
+	output = /obj/item/reagent_containers/food/snacks/candy/candy_apple/poison
 
 //Cakes!
 /datum/cookingrecipe/cake_batter
