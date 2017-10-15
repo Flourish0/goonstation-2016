@@ -97,6 +97,19 @@
 	endurance = 20
 	assoc_reagents = list("omnizine")
 
+/datum/plant/artifact/plasma
+	name = "Plasma"
+	special_icon = "plasma"
+	crop = /obj/critter/spore
+	unique_seed = /obj/item/seed/alien/plasma
+	starthealth = 20
+	growtime = 180
+	harvtime = 220
+	cropsize = 2
+	harvests = 1
+	endurance = 10
+
+
 // Weird Shit
 
 /datum/plant/maneater
