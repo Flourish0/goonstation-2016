@@ -81,6 +81,16 @@
 	assoc_reagents = list("iron")
 	ENrange = list(30,null)
 	chance = 20
+	
+// Apple Mutations
+
+/datum/plantmutation/apple/poison
+	name = "Delicious Apple"
+	crop = /obj/item/reagent_containers/food/snacks/plant/apple/poison
+	iconmod = "papple"
+	assoc_reagents = list("capulettium")
+	ENrange = list(40,null)
+	chance = 10
 
 // Melon Mutations
 
