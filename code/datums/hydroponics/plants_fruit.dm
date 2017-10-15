@@ -122,6 +122,7 @@
 	harvests = 10
 	endurance = 5
 	genome = 19
+	mutations = list(/datum/plantmutation/apple/poison)
 	commuts = list(/datum/plant_gene_strain/quality,/datum/plant_gene_strain/unstable)
 
 /datum/plant/banana
