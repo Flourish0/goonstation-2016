@@ -769,7 +769,7 @@
 						M.stunned+= 2
 						return
 					else
-						boutput(M, "<span style=\"color:red\">The stink of the surströmming combines with your inherent body funk to create a stench of BIBLICAL PROPORTIONS!</span>")
+						boutput(M, "<span style=\"color:red\">The stink of the surstrÃ¶mming combines with your inherent body funk to create a stench of BIBLICAL PROPORTIONS!</span>")
 						M.name_suffix("the Stinky")
 						M.UpdateName()
 		..()
@@ -779,9 +779,9 @@
 		..()
 		if (usr.bioHolder.HasEffect("accent_swedish"))
 			if (src.icon_state == "surs_closed")
-				boutput(usr, "Oooh, a can of surströmming! It's been a while since you've seen one of these. It looks like it's ready to eat.")
+				boutput(usr, "Oooh, a can of surstrÃ¶mming! It's been a while since you've seen one of these. It looks like it's ready to eat.")
 			else
-				boutput(usr, "Oooh, a can of surströmming! It's been a while since you've seen one of these. It smells heavenly!")
+				boutput(usr, "Oooh, a can of surstrÃ¶mming! It's been a while since you've seen one of these. It smells heavenly!")
 			return
 		else
 			if (src.icon_state == "surs_closed")
@@ -1015,6 +1015,17 @@
 	desc = "An apple covered in a hard sugar coating."
 	icon_state = "candy apple"
 	heal_amt = 2
+	
+	poison
+		name = "delicious candy apple"
+		desc = "A delicious apple covered in a hard sugar coating."
+		icon_state = "candy papple"
+		
+		
+		New()
+			..()
+			reagents.add_reagent("capulettium", 10)
+			return
 
 //Candy corn!!
 /obj/item/reagent_containers/food/snacks/candy/candy_corn
